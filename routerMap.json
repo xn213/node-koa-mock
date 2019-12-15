@@ -1,0 +1,5 @@
+{
+    "/v1/articles/1234.json": "/v1/articles/1234",
+    "/v1/name.json": "/v1/name",
+    "/v1/user.json": "/v1/user"
+}
