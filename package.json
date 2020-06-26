@@ -1,19 +1,31 @@
 {
-  "name": "node-mock",
+  "name": "node-koa-mock",
   "version": "1.0.0",
   "description": "nodejs 写的 mock 数据服务器",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "nodemon -w ./ --exec"
+    "serve": "nodemon -w ./ --exec",
+    "commit": "git add . && git-cz"
   },
   "author": "xn213",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.1.3",
     "glob": "^7.1.6",
     "koa": "^2.11.0",
     "koa-logger": "^3.2.1",
     "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "koa-views": "^6.2.3",
     "nodemon": "^2.0.1"
+  },
+  "devDependencies": {
+    "commitizen": "^4.1.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }

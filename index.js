@@ -29,12 +29,18 @@ app.use(logger());
 
 //////////////////////////////////////////
 ///////////////////////////////////////////////
+let content = '' // api/list 目录
 
 // 注册路由
 glob.sync(resolve("./api", "**/*.json")).forEach((item, i) => {
   let apiJsonPath = item && item.split("/api")[1];
   let apiPath = apiJsonPath.replace(".json", "");
   console.log(item, apiJsonPath, apiPath);
+
+  content += apiPath + '\n'
+  router.get('/list', (ctx, next)=> { // => /api/list/
+    ctx.body = content
+  })
 
   router.get(apiPath, (ctx, next) => {
     // http://localhost:3000/newscontent?aid=123
